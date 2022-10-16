@@ -14,16 +14,18 @@ class ViewController: UIViewController {
     private lazy var titleLabel = UILabel()
     private lazy var titleButton = UIButton()
     private lazy var tableView = UITableView()
+
     
-    
-    private lazy var formatter: DateFormatter = {
-        let f = DateFormatter()
-        f.dateStyle = .long
-        f.timeStyle = .short
-        return f
+    private lazy var bgColorView: UIView = {
+       let view = UIView()
+        
+        view.backgroundColor = .systemBlue 
+        
+        return view
+        
     }()
     
-    
+    let memoManager = CoreDataManager.shared
     
     
     
@@ -32,7 +34,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        //tableView.reloadData()
+        tableView.reloadData()
         //print(#function)
     }
     
@@ -59,6 +61,8 @@ class ViewController: UIViewController {
         }
         
         configure()
+        
+        
     }
     
     
@@ -171,13 +175,13 @@ class ViewController: UIViewController {
 
 
 
-// MARK: -- extension
+// MARK: -- extension TableView
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Memo.dummyData.count
+        return memoManager.getDataFromCoreData().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -188,16 +192,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }()
         
-        let target = Memo.dummyData[indexPath.row]
+        // let target = Memo.dummyData[indexPath.row]
+        let target = memoManager.getDataFromCoreData()[indexPath.row]
+
+        cell.textLabel?.text = target.memoText
+        // cell.detailTextLabel?.text = formatter.string(from: target.contentDate)
+        cell.detailTextLabel?.text = target.dateString
         
-        cell.textLabel?.text =  target.content
         
-        cell.detailTextLabel?.text = formatter.string(from: target.contentDate)
+        
         cell.detailTextLabel?.textColor = .lightGray
         
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         
-        
+        cell.backgroundView = bgColorView
         
         return cell
     }
@@ -208,12 +216,41 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = CellDetailViewController()
 
         // 데이터를 받아오는 코드 = 마치 prepare처럼
-        vc.memo = Memo.dummyData[indexPath.row]
+        // 즉, 이 1줄이라는 건데....
+        // CellDetailViewController의 memo 공간에, 본 데이터 공간의 인덱스 파트만 집어넣으면 된다?
+        // vc.memo = Memo.dummyData[indexPath.row]
+        // vc.memo = MemoData.
+        vc.memo = memoManager.getDataFromCoreData()[indexPath.row]
+        
+        
+        
+        
         
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    
+    // commit method, cell을 slide해서 삭제 표시 해주는 것.
+    // 삭제 method 구현
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
+         if editingStyle == .delete {
+
+             // 삭제 코드
+             let target = CoreDataManager.shared.getDataFromCoreData()[indexPath.row]
+             CoreDataManager.shared.deleteData(data: target) {}
+             
+
+             // 삭제 후 테이블뷰 행 정렬
+             tableView.deleteRows(at: [indexPath], with: .fade)
+         }
+     }
+     
+   
+
+    
+
+    
 
     
     

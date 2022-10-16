@@ -16,13 +16,16 @@ class AddViewController: UIViewController {
         //textView.frame = CGRect(x: 10, y: 100, width: 350, height: 170)
         
         textView.translatesAutoresizingMaskIntoConstraints = false
-        //textView.isScrollEnabled = false
+
         textView.delegate = self
         textView.contentInsetAdjustmentBehavior = .automatic
         
         return textView
     }()
     
+    let memoManager = CoreDataManager.shared
+
+        
     
     
     
@@ -62,8 +65,6 @@ class AddViewController: UIViewController {
         
         self.textView.textContainerInset = UIEdgeInsets(top: 16, left: 18, bottom: 16, right: 18)
         
-        
-         //textView제약을 잡으려고 하면, 에러가 우수수.. 실행은 되긴 되는데 원인을 알 수가 없음.
         NSLayoutConstraint.activate([
             self.textView.topAnchor.constraint(equalTo: self.view.topAnchor),
             self.textView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
@@ -82,19 +83,25 @@ class AddViewController: UIViewController {
             self.navigationItem.rightBarButtonItem = rightBarButton
     }
     
+    
+    // 저장 method 구현
     @objc func barButtonTapped() {
         guard let memo = textView.text, memo.count > 0 else {
             alert(message: "메모를 입력하세요.")
             return
         }
         
-        let newMemo = Memo(content: memo)
-        Memo.dummyData.append(newMemo)
+        let memoText = textView.text
+        memoManager.saveData(memoText: memoText) {
+            print("?????")
+        }
+        
         
         NotificationCenter.default.post(name: AddViewController.newMemoDidInsert, object: nil)
         
+        self.navigationController?.popViewController(animated: true)
         //dismiss(animated: true, completion: nil)
-        navigationController?.popViewController(animated: true)
+        
     }
     
     

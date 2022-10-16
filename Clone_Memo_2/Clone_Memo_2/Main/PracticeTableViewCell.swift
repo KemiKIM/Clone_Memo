@@ -13,7 +13,7 @@ import UIKit
 
 class PracticeTableViewCell: UITableViewCell {
     // static var identifier: String { return String(describing: self) }
-    static let cellID = "PracticeTableViewCellr"
+    static let cellID = "PracticeTableViewCell"
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

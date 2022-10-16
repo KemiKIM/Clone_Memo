@@ -13,34 +13,31 @@ class CellDetailViewController: UIViewController {
     
     private lazy var tableView = UITableView()
     
-    var memo: Memo?
+    var memo: MemoData?
     
-    private lazy var formatter: DateFormatter = {
-        let f = DateFormatter()
-        f.dateStyle = .long
-        f.timeStyle = .short
-        return f
-    }()
+    
 
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         tableView.delegate = self
         tableView.dataSource = self
         
+        naviCustom()
         layout()
     }
-
-
+    
+    
+    private func naviCustom() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(trashButtonTapped))
+        self.navigationItem.rightBarButtonItem?.tintColor = .red
+    }
 
     private func layout() {
         layoutTableView()
     }
+
     
     private func layoutTableView() {
         self.view.addSubview(self.tableView)
@@ -56,6 +53,33 @@ class CellDetailViewController: UIViewController {
             self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
     }
+    
+    
+    // 삭제 method 구현
+    @objc private func trashButtonTapped() {
+        let alert = UIAlertController(title: "삭제 확인", message: "메모를 삭제하시겠어요?", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "삭제", style: .destructive)
+        { [ weak self ] (action) in
+            // 삭제 method 구현
+            if let delete = self?.memo {
+                CoreDataManager.shared.deleteData(data: delete) {
+                    print("123")
+                }
+            }
+          
+            // 삭제 후 다시 리스트로 돌아가기
+            self?.navigationController?.popViewController(animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+
+    
+    
+    
 
 
 
@@ -74,7 +98,7 @@ extension CellDetailViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: DateCell.identifier, for: indexPath)
             
-            cell.textLabel?.text = formatter.string(for: memo?.contentDate)
+            cell.textLabel?.text = memo?.dateString
             cell.textLabel?.textColor = .lightGray
             cell.textLabel?.textAlignment = .center
             cell.selectionStyle = .none
@@ -84,7 +108,7 @@ extension CellDetailViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: MemoCell.identifier, for: indexPath)
             
-            cell.textLabel?.text = memo?.content
+            cell.textLabel?.text = memo?.memoText
             //cell.selectionStyle = .none
             cell.textLabel?.numberOfLines = 0
             

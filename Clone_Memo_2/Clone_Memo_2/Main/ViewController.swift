@@ -29,7 +29,6 @@ class ViewController: UIViewController {
     
     
     
-    
     // MARK: -- Override View
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -147,7 +146,7 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellID")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: PracticeTableViewCell.identifier)
         
         //tableView.bounces = false
         
@@ -178,8 +177,6 @@ class ViewController: UIViewController {
 // MARK: -- extension TableView
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memoManager.getDataFromCoreData().count
     }
@@ -192,19 +189,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }()
         
-        // let target = Memo.dummyData[indexPath.row]
         let target = memoManager.getDataFromCoreData()[indexPath.row]
 
+        // title, date
         cell.textLabel?.text = target.memoText
-        // cell.detailTextLabel?.text = formatter.string(from: target.contentDate)
         cell.detailTextLabel?.text = target.dateString
         
-        
-        
+        //custom
         cell.detailTextLabel?.textColor = .lightGray
-        
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-        
         cell.backgroundView = bgColorView
         
         return cell
@@ -213,18 +206,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     // cell을 누르면?
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = CellDetailViewController()
-
-        // 데이터를 받아오는 코드 = 마치 prepare처럼
-        // 즉, 이 1줄이라는 건데....
+        // 데이터를 받아오는 코드 = 마치 prepare처럼...  즉, 이 1줄이라는 건데....
         // CellDetailViewController의 memo 공간에, 본 데이터 공간의 인덱스 파트만 집어넣으면 된다?
+        let vc = CellDetailViewController()
         // vc.memo = Memo.dummyData[indexPath.row]
-        // vc.memo = MemoData.
         vc.memo = memoManager.getDataFromCoreData()[indexPath.row]
-        
-        
-        
-        
         
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -235,25 +221,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
          if editingStyle == .delete {
-
              // 삭제 코드
-             let target = CoreDataManager.shared.getDataFromCoreData()[indexPath.row]
-             CoreDataManager.shared.deleteData(data: target) {}
-             
-
+             let target = memoManager.getDataFromCoreData()[indexPath.row]
+             CoreDataManager.shared.deleteData(data: target) {
+                 print("delete")
+             }
+            
              // 삭제 후 테이블뷰 행 정렬
              tableView.deleteRows(at: [indexPath], with: .fade)
          }
      }
      
    
-
-    
-
-    
-
-    
-    
     
 }
 

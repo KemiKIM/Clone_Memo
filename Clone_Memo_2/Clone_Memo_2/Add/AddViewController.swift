@@ -93,9 +93,8 @@ class AddViewController: UIViewController {
         
         let memoText = textView.text
         memoManager.saveData(memoText: memoText) {
-            print("?????")
+            print("save")
         }
-        
         
         NotificationCenter.default.post(name: AddViewController.newMemoDidInsert, object: nil)
         

@@ -3,20 +3,26 @@
 //  Clone_Memo_2
 //
 //  Created by 김성호 on 2022/10/11.
-// ComposeViewController
+//  ComposeViewController
+
+
+
+/*
+ 
+ 근데 메모 바로 수정하는 그런 기능은...
+ 
+ */
 
 import UIKit
 
 class AddViewController: UIViewController {
+    
+    var addData: MemoData?
 
     private lazy var contentView = UIView()
     private lazy var textView: UITextView = {
        let textView = UITextView()
         
-        //textView.frame = CGRect(x: 10, y: 100, width: 350, height: 170)
-        
-        textView.translatesAutoresizingMaskIntoConstraints = false
-
         textView.delegate = self
         textView.contentInsetAdjustmentBehavior = .automatic
         
@@ -38,38 +44,67 @@ class AddViewController: UIViewController {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        edit()
+        print(#function)
+    }
+    
+    
+    private func edit() {
+        if let memo = self.addData {
+            
+            guard let text = memo.memoText else { return }
+            textView.text = text
+            print("44")
+        } else {
+            print("55")
+        }
+    }
+    
+    
+    
     private func configure() {
+        configureContentView()
         configureTextView()
         configureBarButton()
         
     }
     
-    /*
+    
     private func configureContentView() {
         self.view.addSubview(self.contentView)
         
-        self.contentView.backgroundColor = .systemGray6
+        self.contentView.backgroundColor = .systemBrown
         
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
-     
+        NSLayoutConstraint.activate([
+            self.contentView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            self.contentView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            self.contentView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            self.contentView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
+            //self.textView.heightAnchor.constraint(equalToConstant: 300)
+        ])
      //
         
     }
-     */
+     
 
     
     private func configureTextView() {
-        self.view.addSubview(self.textView)
+        self.contentView.addSubview(self.textView)
         
         self.textView.backgroundColor = .systemGray3
         
-        self.textView.textContainerInset = UIEdgeInsets(top: 16, left: 18, bottom: 16, right: 18)
+        //self.textView.textContainerInset = UIEdgeInsets(top: 16, left: 18, bottom: 16, right: 18)
         
+        textView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.textView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            self.textView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            self.textView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            self.textView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            self.textView.topAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.topAnchor, constant: 8),
+            self.textView.leadingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            self.textView.trailingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.trailingAnchor, constant: -8),
+            self.textView.bottomAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.bottomAnchor, constant: -8)
             //self.textView.heightAnchor.constraint(equalToConstant: 300)
         ])
          
@@ -131,7 +166,7 @@ extension AddViewController: UITextViewDelegate {
            
            textView.constraints.forEach { (constraint) in
            
-             /// 180 이하일때는 더 이상 줄어들지 않게하기
+             // 180 이하일때는 더 이상 줄어들지 않게하기
                if estimatedSize.height <= 180 {
                
                }

@@ -5,6 +5,21 @@
 //  Created by 김성호 on 2022/10/12.
 //
 
+
+/*
+ 
+ 어쨌든 이 celldetail이 메모작성이니깐, 앨런앱과 동일하게, if문을 사용해서 휴지통기능이 있는지 없는지만, 또한 버튼의 모양을 변화하는 그런 내용을 줘야겠다.
+ 
+ */
+
+
+// 디테일뷰에 우측 하단 버튼 2가지 버튼으로 수정, 삭제 버튼이 있었으면 좋겠다.
+// 우측 맨 위에는 공유버튼
+// 가운데 상단에는 상세한 날짜 정도?
+
+
+
+
 import Foundation
 import UIKit
 
@@ -30,8 +45,13 @@ class CellDetailViewController: UIViewController {
     
     
     private func naviCustom() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(trashButtonTapped))
-        self.navigationItem.rightBarButtonItem?.tintColor = .red
+        
+        
+        let abc = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(trashButtonTapped))
+        let dfe = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(editButtonTapped))
+        
+        self.navigationItem.rightBarButtonItems = [abc, dfe]
+        
     }
 
     private func layout() {
@@ -76,6 +96,16 @@ class CellDetailViewController: UIViewController {
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }
+    
+    
+    // 편집 method 구현
+    @objc private func editButtonTapped() {
+        
+        let vc = AddViewController()
+        vc.addData = memo
+        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
     
     
@@ -90,7 +120,7 @@ extension CellDetailViewController: UITableViewDelegate, UITableViewDataSource {
         return 2
     }
 
-    
+    // cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         // 2개의 셀을 한 테이블 뷰에 넣는 방법.

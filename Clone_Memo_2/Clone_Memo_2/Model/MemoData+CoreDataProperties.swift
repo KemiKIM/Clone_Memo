@@ -21,7 +21,7 @@ extension MemoData {
 
     var dateString: String? {
         let myFormatter = DateFormatter()
-        myFormatter.dateFormat = "yyyy-MM-dd"
+        myFormatter.dateFormat = "yy.MM.dd"
         guard let date = self.date else { return "" }
         let savedDateString = myFormatter.string(from: date)
         return savedDateString

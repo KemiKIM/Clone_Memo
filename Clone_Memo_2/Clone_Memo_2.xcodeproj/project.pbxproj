@@ -15,6 +15,8 @@
 		DB5D292028FBDE7400499D5F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5D291F28FBDE7400499D5F /* CoreDataManager.swift */; };
 		DB5D292328FBE13A00499D5F /* MemoData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5D292128FBE13A00499D5F /* MemoData+CoreDataClass.swift */; };
 		DB5D292428FBE13A00499D5F /* MemoData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5D292228FBE13A00499D5F /* MemoData+CoreDataProperties.swift */; };
+		DB9EF563290280A600BCEB52 /* TestViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9EF562290280A600BCEB52 /* TestViewController1.swift */; };
+		DB9EF565290280DA00BCEB52 /* TestViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9EF564290280DA00BCEB52 /* TestViewController2.swift */; };
 		DBF8537A28ED75DB001AECBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF8537928ED75DB001AECBE /* AppDelegate.swift */; };
 		DBF8537C28ED75DB001AECBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF8537B28ED75DB001AECBE /* SceneDelegate.swift */; };
 		DBF8538128ED75DB001AECBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF8537F28ED75DB001AECBE /* Main.storyboard */; };
@@ -23,6 +25,9 @@
 		DBF8538928ED75DC001AECBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF8538728ED75DC001AECBE /* LaunchScreen.storyboard */; };
 		DBF8539828ED78AB001AECBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF8539728ED78AB001AECBE /* ViewController.swift */; };
 		DBF8539C28ED7D8A001AECBE /* PracticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF8539B28ED7D8A001AECBE /* PracticeTableViewCell.swift */; };
+		DBF9D635290903DF00B16CE0 /* NotiTestViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF9D634290903DF00B16CE0 /* NotiTestViewController1.swift */; };
+		DBF9D637290903EE00B16CE0 /* NotiTestViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF9D636290903EE00B16CE0 /* NotiTestViewController2.swift */; };
+		DBF9D639290903F200B16CE0 /* NotiTestViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF9D638290903F200B16CE0 /* NotiTestViewController3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,8 @@
 		DB5D291F28FBDE7400499D5F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		DB5D292128FBE13A00499D5F /* MemoData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemoData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DB5D292228FBE13A00499D5F /* MemoData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemoData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DB9EF562290280A600BCEB52 /* TestViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController1.swift; sourceTree = "<group>"; };
+		DB9EF564290280DA00BCEB52 /* TestViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController2.swift; sourceTree = "<group>"; };
 		DBF8537628ED75DB001AECBE /* Clone_Memo_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clone_Memo_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF8537928ED75DB001AECBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBF8537B28ED75DB001AECBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +51,9 @@
 		DBF8538A28ED75DC001AECBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBF8539728ED78AB001AECBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DBF8539B28ED7D8A001AECBE /* PracticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeTableViewCell.swift; sourceTree = "<group>"; };
+		DBF9D634290903DF00B16CE0 /* NotiTestViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiTestViewController1.swift; sourceTree = "<group>"; };
+		DBF9D636290903EE00B16CE0 /* NotiTestViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiTestViewController2.swift; sourceTree = "<group>"; };
+		DBF9D638290903F200B16CE0 /* NotiTestViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiTestViewController3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +129,11 @@
 				DB14BB2428F7D71A00AAB5C3 /* Add */,
 				DB14BB2528F7D72D00AAB5C3 /* Detail */,
 				DBF8537F28ED75DB001AECBE /* Main.storyboard */,
+				DB9EF562290280A600BCEB52 /* TestViewController1.swift */,
+				DB9EF564290280DA00BCEB52 /* TestViewController2.swift */,
+				DBF9D634290903DF00B16CE0 /* NotiTestViewController1.swift */,
+				DBF9D636290903EE00B16CE0 /* NotiTestViewController2.swift */,
+				DBF9D638290903F200B16CE0 /* NotiTestViewController3.swift */,
 				DBF8538528ED75DC001AECBE /* Assets.xcassets */,
 				DBF8538728ED75DC001AECBE /* LaunchScreen.storyboard */,
 				DBF8538A28ED75DC001AECBE /* Info.plist */,
@@ -208,13 +223,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB9EF563290280A600BCEB52 /* TestViewController1.swift in Sources */,
 				DBF8539C28ED7D8A001AECBE /* PracticeTableViewCell.swift in Sources */,
+				DBF9D635290903DF00B16CE0 /* NotiTestViewController1.swift in Sources */,
 				DB5D292328FBE13A00499D5F /* MemoData+CoreDataClass.swift in Sources */,
 				DBF8539828ED78AB001AECBE /* ViewController.swift in Sources */,
 				DB14BB1628F59D6900AAB5C3 /* AddViewController.swift in Sources */,
 				DB14BB1E28F6C16A00AAB5C3 /* CellDetailViewController.swift in Sources */,
+				DB9EF565290280DA00BCEB52 /* TestViewController2.swift in Sources */,
+				DBF9D639290903F200B16CE0 /* NotiTestViewController3.swift in Sources */,
 				DBF8538428ED75DB001AECBE /* Clone_Memo_2.xcdatamodeld in Sources */,
 				DB5D292028FBDE7400499D5F /* CoreDataManager.swift in Sources */,
+				DBF9D637290903EE00B16CE0 /* NotiTestViewController2.swift in Sources */,
 				DBF8537A28ED75DB001AECBE /* AppDelegate.swift in Sources */,
 				DB14BB1C28F6B4C900AAB5C3 /* Alert.swift in Sources */,
 				DB14BB2228F710FE00AAB5C3 /* MemoCell.swift in Sources */,
@@ -375,7 +395,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -404,7 +424,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

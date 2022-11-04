@@ -12,17 +12,28 @@
 import UIKit
 
 class PracticeTableViewCell: UITableViewCell {
-    static var identifier: String { return String(describing: self) }
     // static let cellID = "PracticeTableViewCell"
     
+    // static var identifier: String { return String(describing: self) }
     
+    static var identifier: String {
+        get {
+            return String(describing: self)
+        }
+    }
+    // 이거 뭔가 get set method에 대해 정확한 이해가 먼저 필요한 것 같다.
+    
+    // style을 .value1으로 설정함으로 인해 셀 우측에 날짜가 나오도록 설정함
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+        super.init(style: .value1, reuseIdentifier: reuseIdentifier)
         
     }
     
     required init?(coder: NSCoder) {
           fatalError("")
       }
+    
+    
+
     
 }

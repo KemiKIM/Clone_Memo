@@ -6,26 +6,37 @@
 // MemoListViewController
 
 
+
+
+// 참고하는 앱을 보니,
+// 메인 뷰, 쓰기 뷰, 디테일 뷰가 다름.
+
+
+
+
+
+
 import UIKit
 
 class ViewController: UIViewController {
+    let memoManager = CoreDataManager.shared
     // MARK: -- 변수선언
     private lazy var titleView = UIView()
     private lazy var titleLabel = UILabel()
     private lazy var titleButton = UIButton()
-    private lazy var tableView = UITableView()
-
-    
-    private lazy var bgColorView: UIView = {
-       let view = UIView()
+    private lazy var tableView: UITableView = {
+        let t = UITableView()
         
-        view.backgroundColor = .systemBlue 
         
-        return view
+        t.rowHeight = 60
+        
+        
+        return t
         
     }()
-    
-    let memoManager = CoreDataManager.shared
+
+    private lazy var bottomButton = UIButton()
+   
     
     
     
@@ -65,16 +76,49 @@ class ViewController: UIViewController {
     }
     
     
+    @objc func pullToRefresh(refresh: UIRefreshControl) {
+        print("pullToRefresh()")
+        refresh.endRefreshing()
+
+        //새로고침 시 적용하고 싶은 코드.
+        let vc = AddViewController()
+        vc.modalPresentationStyle = .overFullScreen
+    
+        self.present(vc, animated: true)
+        //self.navigationController?.pushViewController(vc, animated: true)
+
+        // tableView.reloadData()
+    }
+    
+    private func setUI() {
+        //...
+        // 당겨서 새로고침
+        let refreshControl = UIRefreshControl()
+        // 이미지 안보이게 하기
+        refreshControl.tintColor = .clear
+        // 문구 넣기
+        // refreshControl.attributedTitle = NSAttributedString(string: "당겨서 새로고침")
+    
+        refreshControl.addTarget(self, action: #selector(pullToRefresh(refresh:)), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
+    
+    
+    
+    
     
     
     // MARK: -- 제약 Custom
     private func configure() {
+        
+        setUI()
         
         self.configureTitleView()
         self.configureTitleLabel()
         self.configureTitlePlusButton()
         //
         self.configureTableView()
+        self.configureBottomButton()
         
         
     }
@@ -162,6 +206,19 @@ class ViewController: UIViewController {
         
     }
     
+    // 5
+    private func configureBottomButton() {
+        self.view.addSubview(self.bottomButton)
+        
+        self.bottomButton.setTitle("@", for: .normal)
+        self.bottomButton.backgroundColor = .black
+        
+        self.bottomButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.bottomButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            self.bottomButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
+        ])
+    }
     
 
     
@@ -184,7 +241,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: UITableViewCell = {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else { return UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else { return UITableViewCell(style: .value1, reuseIdentifier: "cell")
             }
             return cell
         }()
@@ -197,9 +254,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         //custom
         cell.detailTextLabel?.textColor = .lightGray
-        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-        cell.backgroundView = bgColorView
-        
+        //cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+       
         return cell
     }
     
@@ -222,6 +278,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
          if editingStyle == .delete {
              // 삭제 코드
+             
+             // 정말 삭제하겠냐는 걸 물어보고 지우는게 나을 것 같은데?
+             
              let target = memoManager.getDataFromCoreData()[indexPath.row]
              CoreDataManager.shared.deleteData(data: target) {
                  print("delete")
@@ -231,6 +290,31 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
              tableView.deleteRows(at: [indexPath], with: .fade)
          }
      }
+    
+    
+    
+    // trailing swipe
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let edit = UIContextualAction(style: .normal, title: "Edit") { _, _, _ in
+            print("Edit button tapped")
+        }
+        let delete = UIContextualAction(style: .destructive, title: "delete") { _, _, _ in
+            print("delete button tapped")
+        }
+        let swipeConfigureation = UISwipeActionsConfiguration(actions: [delete, edit])
+        return swipeConfigureation
+    }
+    
+    
+    // leading swipe
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let more = UIContextualAction(style: .normal, title: "") { _, _, _ in
+            print("more button tapped")
+        }
+        
+        let swipeConfigureation = UISwipeActionsConfiguration(actions: [more])
+        return swipeConfigureation
+    }
      
    
     

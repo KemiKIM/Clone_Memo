@@ -6,7 +6,7 @@
 
 ## 🤝_ 프로젝트 목표
 #### 1. Git을 활용한 협업을 통해, 오류 및 충돌에 대한 부분을 사전경험 및 대처하는 내용을 경험해본다.
-#### 2. CloneCoding을 통하여, UIKit Framework와 AutoLayout 숙련도 향상해본다.
+#### 2. CloneCoding을 통하여, UIKit Framework와 AutoLayout 숙련도 향상을 경험한다.
 
 &nbsp;
 

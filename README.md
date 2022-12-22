@@ -21,6 +21,24 @@
 #### 0️⃣  _ Week [ `10.01` ~ `10.05` ]
 
 
+이미지 예시 
+
+
+<img src = "https://user-images.githubusercontent.com/114051946/209081730-d48682f0-d6a5-44dc-90af-8fae467f9171.jpg" width="30%" height="30%">
+
+
+gif 파일 예시
+
+
+
+
+##### 👌 구현부분:
+aaa
+##### 🤔 생각할 부분:
+aaa
+##### ⏭ Next Week Deadline:
+aaa
+
 &nbsp;
 
 

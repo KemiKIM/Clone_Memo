@@ -20,24 +20,20 @@
 
 #### 0️⃣  _ Week [ `10.01` ~ `10.05` ]
 
-
-이미지 예시 
-
-
-<img src = "https://user-images.githubusercontent.com/114051946/209081730-d48682f0-d6a5-44dc-90af-8fae467f9171.jpg" width="30%" height="30%">
-
-
-gif 파일 예시
-
-
+<p align="center">
+  <img src = "https://user-images.githubusercontent.com/114051946/209294695-e9d9468c-cdb6-4e3e-8794-1f4aad8a3868.png" width="20%" height="20%">
+</p>
 
 
 ##### 👌 구현부분:
-aaa
+첫 모임을 가지기 전, 제가 맡은 부분에 대해 전체적인 구상을 해보았습니다. </br>
+구상을 하며, 상단부분만 구분 짓는 백그라운드 색상을 변경하여 단순하게 구현을 하였습니다.</br>
+(계정설정, 고객센터 버튼, 닉네임 레이블)
 ##### 🤔 생각할 부분:
-aaa
+닉네임 레이블의 경우 사용자의 정보를 받아와야하기 때문에 임의로 설정하였습니다.
 ##### ⏭ Next Week Deadline:
-aaa
+깃포크와 소스트리를 활용하여 깃에 대해 공부하고, 협업을 하는 것에 대해 중심을 두면서 작업을 진행하기.</br>
+하단의 광고 창 구현하기.
 
 &nbsp;
 

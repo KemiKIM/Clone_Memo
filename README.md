@@ -1,4 +1,4 @@
-# Clone MegaCoffee App Project (주차별 기록내용)
+# Clone MegaCoffee App Project (주차별 기록내용 정리)
 &nbsp;
 
 

@@ -112,11 +112,72 @@ fetch head error를 해결하기 위해, 지금 당장의 구현보단, git에 �
 
 #### 3️⃣  _ Week [ `10.20` ~ `10.26` ]
 
+
+
+<p align="center">
+  <img src = "https://user-images.githubusercontent.com/114051946/209298522-167f0e03-457d-4a1b-bae4-b150795d73f4.JPG" width="20%" height="20%">
+</p>
+
+
+
+##### 👌 구현부분:
+Source에 대한 fetch head error를 끝내 해결하지 못했습니다.</br>
+일부 error는 팀원들이 pull과 push에 대해 제대로 이해하지 못해 프로젝트가 터져 다시 복구하는데까지 시간이 소요된 것도 있습니다.
+
+##### 🤔 생각할 부분:
+
+터미널로 접근해야할지 다른 플랫폼이 있는지 찾아봐야할 것 같습니다.</br>
+일단 제 프로젝트는 모든 내용이 코드로 구현되어 있기 때문에, 맨 마지막에 머지함으로써 최대한 프로젝트를 보존하고자 노력하였습니다.
+
+
+##### ⏭ Next Week Deadline:
+
+fetch head error를 해결하기 위해, 지금 당장의 구현보단, git에 대해 공부 및 에러 해결에 초점을 맞추기.</br>
+전체적인 협업 guide line에 대해 다시 생각해보고 적용해보기.
+
+
 &nbsp;
 
 </br>
 
 #### 4️⃣  _ Week [ `10.27` ~ `11.02` ]
+
+
+
+<p align="center">
+  <img src = "https://user-images.githubusercontent.com/114051946/209301566-b290c620-8356-496a-9ebe-b474317d6e71.gif" width="20%" height="20%">
+  <img src = "https://user-images.githubusercontent.com/114051946/209300749-3c41a5d2-9f33-4e7f-879a-7e4e3adfb5a2.gif" width="20%" height="20%">
+</p>
+
+
+
+
+
+##### 👌 구현부분:
+광고창 아래, 목록을 구현하였습니다.</br>
+이용약관 tab을 구현하였습니다. 임의로 데이터를 만들어 해당 내용을 넣어주었습니다.</br>
+소스트리의 고질적인 문제를 해결하지 못하고, 깃크라켄을 사용함으로써 프로젝트를 병합하는데 모든 문제를 해결하였습니다.
+
+
+##### 🤔 생각할 부분:
+
+ios15부터 발생하는 TableView padding문제가 있었습니다.</br>
+해결 코드 및 해결 사진. 필요
+
+
+##### ⏭ Next Week Deadline:
+
+계정설정 버튼과 고객센터 버튼 내부를 최대한 구현하기.
+
+
+
+
+
+
+
+
+
+
 
 &nbsp;
 

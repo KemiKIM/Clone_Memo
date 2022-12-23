@@ -146,6 +146,10 @@ fetch head error를 해결하기 위해, 지금 당장의 구현보단, git에 �
 
 <p align="center">
   <img src = "https://user-images.githubusercontent.com/114051946/209301566-b290c620-8356-496a-9ebe-b474317d6e71.gif" width="20%" height="20%">
+   <img src = "https://user-images.githubusercontent.com/114051946/209302656-e27e2593-78b7-481f-857a-5d90cff8bbb5.gif" width="20%" height="20%">
+  &nbsp;
+  &nbsp;
+   <img src = "https://user-images.githubusercontent.com/114051946/209302660-8d270ab2-ac92-4c21-baa5-3848cb43b63f.gif" width="20%" height="20%">
   <img src = "https://user-images.githubusercontent.com/114051946/209300749-3c41a5d2-9f33-4e7f-879a-7e4e3adfb5a2.gif" width="20%" height="20%">
 </p>
 
@@ -153,8 +157,11 @@ fetch head error를 해결하기 위해, 지금 당장의 구현보단, git에 �
 
 
 
+
 ##### 👌 구현부분:
 광고창 아래, 목록을 구현하였습니다.</br>
+메가 오더, 선물하기을 tap할 경우 해당 view로 이동하도록 구현하였습니다.</br>
+상품권 대량 구매 신청을 누르면 해당 url로 이동하도록 구현하였습니다.</br>
 이용약관 tab을 구현하였습니다. 임의로 데이터를 만들어 해당 내용을 넣어주었습니다.</br>
 소스트리의 고질적인 문제를 해결하지 못하고, 깃크라켄을 사용함으로써 프로젝트를 병합하는데 모든 문제를 해결하였습니다.
 
@@ -162,7 +169,7 @@ fetch head error를 해결하기 위해, 지금 당장의 구현보단, git에 �
 ##### 🤔 생각할 부분:
 
 ios15부터 발생하는 TableView padding문제가 있었습니다.</br>
-해결 코드 및 해결 사진. 필요
+해결 코드 및 해결 사진. 필요 -> issue 연결필요함.
 
 
 ##### ⏭ Next Week Deadline:

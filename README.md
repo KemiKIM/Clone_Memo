@@ -121,13 +121,13 @@ fetch head error를 해결하기 위해, 지금 당장의 구현보단, git에 �
 
 
 ##### 👌 구현부분:
-Source에 대한 fetch head error를 끝내 해결하지 못했습니다.</br>
-일부 error는 팀원들이 pull과 push에 대해 제대로 이해하지 못해 프로젝트가 터져 다시 복구하는데까지 시간이 소요된 것도 있습니다.
+SourceTree error인 fetch head error를 끝내 해결하지 못했습니다.</br>
+일부 error는 팀원들이 pull과 push에 대해 제대로 이해하지 못해 프로젝트가 열리지 않아 다시 복구하는데까지 시간이 소요된 것도 있습니다.
 
 ##### 🤔 생각할 부분:
 
 터미널로 접근해야할지 다른 플랫폼이 있는지 찾아봐야할 것 같습니다.</br>
-일단 제 프로젝트는 모든 내용이 코드로 구현되어 있기 때문에, 맨 마지막에 머지함으로써 최대한 프로젝트를 보존하고자 노력하였습니다.
+일단 제 프로젝트는 모든 내용이 코드로 구현되어 있기 때문에, 맨 마지막에 merge함으로써 최대한 프로젝트를 보존하고자 노력하였습니다.
 
 
 ##### ⏭ Next Week Deadline:
@@ -145,15 +145,8 @@ fetch head error를 해결하기 위해, 지금 당장의 구현보단, git에 �
 
 
 <p align="center">
-  <img src = "https://user-images.githubusercontent.com/114051946/209301566-b290c620-8356-496a-9ebe-b474317d6e71.gif" width="20%" height="20%">
-   <img src = "https://user-images.githubusercontent.com/114051946/209302656-e27e2593-78b7-481f-857a-5d90cff8bbb5.gif" width="20%" height="20%">
-  &nbsp;
-  &nbsp;
-   <img src = "https://user-images.githubusercontent.com/114051946/209302660-8d270ab2-ac92-4c21-baa5-3848cb43b63f.gif" width="20%" height="20%">
-  <img src = "https://user-images.githubusercontent.com/114051946/209300749-3c41a5d2-9f33-4e7f-879a-7e4e3adfb5a2.gif" width="20%" height="20%">
+  <img src = "https://user-images.githubusercontent.com/114051946/209637903-ed9a5a05-8005-4d81-b044-153bb86b4c46.gif" width="20%" height="20%">
 </p>
-
-
 
 
 
@@ -184,14 +177,24 @@ ios15부터 발생하는 TableView padding문제가 있었습니다.</br>
 #### 5️⃣  _ Week [ `11.03` ~ `11.09` ]
 
 
+<p align="center">
+  <img src = "https://user-images.githubusercontent.com/114051946/209638564-6f54f093-0d6e-420d-848b-219864ffa4ad.gif" width="20%" height="20%">&nbsp;&nbsp;
+  <img src = "https://user-images.githubusercontent.com/114051946/209638567-87f1bb8a-a27a-4de6-b955-001d0e506fb5.gif" width="20%" height="20%">
+</p>
+
+
+
 
 ##### 👌 구현부분:
 
 계정설정 버튼과 고객센터 버튼 내부를 완벽하진 않지만, 일부 구현하였습니다.</br>
-문의유형 버튼 선택시 delegate pattern을 사용하여 선택된 내용을 받아왔습니다.</br>
-내용초기화 버튼 선택시 원하는 부분을 모두 초기화 상태로 돌리는 함수를 구현했습니다.</br>
-(고객센터) 초기화면에서 셀 뒷면에만 회색으로 표시하는 부분을 해결하면 헤더푸터에 대한 내용을 습득했습니다.</br>
-(고객센터) 셀 악세사리 뷰 disclosure indicator 색상을 바꿔주고 싶었는데, 악세사리뷰 컬러코드는 먹지를 않아서, 아예 시스템 이미지를 설정해 바꿔주었습니다.</br>
+</br>
+(계정설정) 초기화면에서 셀 뒷면에만 회색으로 표시하는 부분을 해결하면 헤더푸터에 대한 내용을 습득했습니다.</br>
+(계정설정) 셀 악세사리 뷰 disclosure indicator 색상을 바꿔주고 싶었는데, 악세사리뷰 컬러코드는 먹지를 않아서, 아예 시스템 이미지를 설정해 바꿔주었습니다.</br>
+</br>
+(고객센터)문의유형 버튼 선택시 delegate pattern을 사용하여 선택된 내용을 받아왔습니다.</br>
+(고객센터)내용초기화 버튼 선택시 원하는 부분을 모두 초기화 상태로 돌리는 함수를 구현했습니다.</br>
+</br>
 
 
 
@@ -199,8 +202,10 @@ ios15부터 발생하는 TableView padding문제가 있었습니다.</br>
 ##### 🤔 생각할 부분:
 
 코드 구현에 에러가 있는지 라지타이틀이 지속적으로 유지되는 현상을 발견했습니다.</br>
+</br>
 (계정설정)닉네임변경 화면과 로그아웃 화면의 ui가 비슷하여 재사용 컨트롤러로 합칠 수 있을지 생각해보았습니다.</br>
 (계정설정) 회원탈퇴 화면에서 pop할 때 pop한 화면에서 겹치는 현상이 발생하였습니다.</br>
+</br>
 (고객센터) 문의유형 버튼 우측 화살표 버튼 제목 우측으로 설정하여 inset을 주었지만, 글자수가 변경됨에 따라 이동하는 현상이 발생하였습니다.</br>
 
 
@@ -215,34 +220,168 @@ ios15부터 발생하는 TableView padding문제가 있었습니다.</br>
 
 #### 6️⃣  _ Week [ `11.10` ~ `11.16` ]
 
+
+
+<p align="center">
+  <img src = "https://user-images.githubusercontent.com/114051946/209639957-3ceee123-719b-4f33-8ae2-8125128c5fc4.gif" width="20%" height="20%">&nbsp;&nbsp;
+  <img src = "https://user-images.githubusercontent.com/114051946/209639966-bbf69b2f-bd2e-444b-bd6a-3008d69d80b8.gif" width="20%" height="20%">
+</p>
+
+
+
+
+##### 👌 구현부분:
+
+라지타이틀이 지속적으로 유지되는 현상을 해결하였습니다. (코드에러)</br>
+</br>
+(계정설정) 닉네임 변경 화면과 로그아웃 화면을 한 컨트롤러 안에 합쳐서 구현하였습니다.</br>
+-> (해당 화면으로 이동할 때 클로저를 통해 상황에 맞게끔 실행)</br>
+(계정설정) 닉네임 변경화면 내부 텍스트필드 델리게이트를 통해 글자 수 카운트를 구현하였습니다.</br>
+</br>
+(고객센터) 회원탈퇴 화면에서 체크마크를 눌렀을 때 버튼이 활성화되게끔 구현하였습니다.</br>
+-> (hidden과 isenabled로 상황에 맞게끔 구현)</br>
+(고객센터) 문의유형 버튼 우측 화살표를 레이블로 설정하여 고정해두었습니다.</br>
+</br>
+
+
+
+
+##### 🤔 생각할 부분:
+
+(고객센터) 사진 등록 시 image path를 label에 표시하고 싶었지만, 관련 코드를 찾을 수 없었습니다.</br>
+
+
+##### ⏭ Next Week Deadline:
+
+생각할 부분의 에러를 최대한 해결해보고, 주문내역과 간편카드 관리 tab 내부를 구현해봅니다.</br>
+
 &nbsp;
+
+
+
 
 </br>
 
 #### 7️⃣  _ Week [ `11.17` ~ `11.23` ]
 
-&nbsp;
+
+<p align="center">
+  <img src = "https://user-images.githubusercontent.com/114051946/209640935-f3a1f8cb-943e-4608-a08e-a22a0eb2e734.gif" width="20%" height="20%">&nbsp;&nbsp;
+  <img src = "https://user-images.githubusercontent.com/114051946/209640970-31a3847b-4459-44a7-ba71-9144af331d0d.gif" width="20%" height="20%">
+</p>
+
+
+
+
+##### 👌 구현부분:
+주문내역과 간편카드 관리를 일부 구현하였습니다.</br>
+</br>
+(주문내역) 상단의 1개월 ~ 전체 버튼은 section header를 custom하여 cell 선택에 따라 tag를 사용하여, 해당 cell에 맞는 화면을 보여줄 수 있도록 구현하였습니다.</br>
+</br>
+(간편카드관리) tableview에 custom cell 5개를 연결하여, 한 화면에 보여줄 수 있도록 구현하였습니다.</br>
+
+
+
+
+##### 🤔 생각할 부분:
+
+(주문내역) 임의의 더미데이터를 사용하여, 해당 cell에 맞는 내용을 주문내역 상세페이지에서 보여줄 수 있도록 구현하기.</br>
+</br>
+(간편카드관리) 각 cell에 맞는 상세 기능을 구현해야 합니다.</br>
+(</br>
+1번 cell - text count 표시</br>
+2번 cell - 숫자가 4개가 되면 자동으로 다음 textfield로 넘어가며 2번째와 3번째 textfield는 block 처리하기</br>
+3,4번 cell - 2번 cell과 동일하게 처리</br>
+5번 cell -고객 구분에 맞게끔 다르게 나오도록 처리하기.</br>
+)</br>
+</br>
+
+
+##### ⏭ Next Week Deadline:
+생각할 부분에서 나온 에러를 처리하고, 이벤트 및 공지사항까지 최대한 구현하기.</br>
+
+
+
+</br>
 
 </br>
 
 #### 8️⃣  _ Week [ `11.24` ~ `11.30` ]
 
-&nbsp;
+<p align="center">
+  <img src = "https://user-images.githubusercontent.com/114051946/209642140-b1438ce1-f0b7-47d3-a782-5900302a3618.gif" width="20%" height="20%">&nbsp;&nbsp;
+  <img src = "https://user-images.githubusercontent.com/114051946/209642148-08b1ee14-9f78-455f-b1d5-5404fb87a210.gif" width="20%" height="20%">
+</p>
+
+
+
+##### 👌 구현부분:
+주문내역에서 해당 cell에 맞는 내용을 상세페이지에 표시할 수 있도록 구현하였습니다.</br>
+간편카드관리에서 각 cell에 맞는 상세기능을 구현하였습니다.</br>
+이벤트 및 공지사항을 일부분 구현하였습니다.</br>
+</br>
+
+
+
+
+##### 🤔 생각할 부분:
+(주문내역) 애니메이션을 구현하고 싶었지만, 애니메이션에 대한 전반적인 이해가 부족하여 해당 내용을 공부하고 다시 적용해야 할 것 같습니다.</br>
+(간편카드관리) 해당 textfield를 클릭할 때마다 키보드 위를 custom하여 좀 더 편리하게 작동할 수 있도록 변경해야합니다. 또한 모든 cell이 입력되었을 때 하단의 버튼이 활성화되게끔 변경해야합니다.</br>
+</br>
+
+
+##### ⏭ Next Week Deadline:
+전체적인 코드를 정리하고 MVC 패턴으로 파일을 정리하며, 구현하지 못한 기능들을 최대한 구현해보도록 노력해봅니다.</br>
+</br>
+
+
+
+</br>
 
 </br>
 
 #### 9️⃣  _ Week [ `12.01` ~ `12.06` ] (Final)
 
-&nbsp;
+
+<p align="center">
+  <img src = "https://user-images.githubusercontent.com/114051946/209642859-d7c38ea6-1d55-4990-9929-e77cb26fb90f.gif" width="20%" height="20%">
+</p>
 
 </br>
+
+
+##### 👌 구현부분:
+코드 정리 및 파일 분류를 진행하였습니다.</br>
+최신 메가커피 앱에 더보기 화면을 반영하여 광고창을 삭제하였습니다.</br>
+(간편카드 관리) 키보드가 활성화되었을 때 키보드 상단의 uibar를 통하여 위,아래 완료 버튼을 추가하였습니다.</br>
+</br>
+
+
+
+
+##### 🤔 생각할 부분:
+기능 구현에 대해 다시 생각해봐야할 부분들이 있습니다.</br>
+</br>
+
+
+##### ⏭ What to implement in the future:
+구현하지 못했던 에러 및 기능들에 대해 상세히 공부해보고, 틈틈이 해당 내용들을 구현해볼 수 있도록 작업할 것입니다.
+</br>
+
 
 
 </br>
 
 ## 🧐 _ 소감
-#### 1. 이러쿵저러쿵
-#### 2. 저러쿵 이러쿵
+</br>
+
+#### 1. 팀프로젝트(협업)를 진행하면서 가장 필수적인 git에 대해 접근해보았고, 개인에 맞는 플랫폼을 활용하여 향후 merge conflict에 대한 대처경험을 얻을 수 있었습니다. 개인적으로 gitKraKen을 사용함으로써 프로젝트를 합치는 시간을 상당히 단축할 수 있었고, 향후에도 사용하고 싶습니다.</br>
+#### 2. 주마다 만나 팀원들과 코드 리뷰를 해보며, 팀원에게 아는 내용들을 공유하여 구현 못한 부분들을 그 자리에서 해결해줄 수 있었습니다.</br>
+#### 3. 소소한 혹은 큰 에러(코드에러, autolayout 포함)들을 만나면서, 팀원들과 같이 고민해보고 해결해볼 수 있는 시간이 있어서 좋았습니다.</br>
+#### 4. 클론 프로젝트로 시작했기 때문에 피그마를 사용하지는 않았지만, 향후 새로운 프로젝트를 시작할 때는 피그마를 활용하여 천천히 접근해야한다는 부분을 알았습니다.</br>
+
+
+
 
 &nbsp;
 
